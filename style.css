@@ -1,0 +1,602 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P:regular);
+@import url(https://fonts.googleapis.com/css?family=Rajdhani:300,regular,500,600,700);
+
+body,
+html {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: #71C5CF;
+    font-family: "Rajdhani", sans-serif;
+}
+
+.brands {
+    width: 190px;
+    height: 100px;
+    position: absolute;
+    overflow: hidden;
+    bottom: 1rem;
+    left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #fff;
+    z-index: 1001;
+    border: 10px solid #fff;
+}
+
+.brands div {
+    height: 130px;
+    width: 170px;
+    background-image: url("assets/brands.png");
+    background-position: 0%, center;
+    background-size: 600% 100%;
+    animation: brandsAni 20s infinite linear;
+    box-shadow: inset 10px 0 20px 10px rgb(255 255 255),
+                inset -10px 0 20px 10px rgb(255 255 255);
+}
+
+@keyframes brandsAni {
+    0% {
+        background-position: 0%, center;
+    }
+
+    90% {
+        background-position: 100%, center;
+    }
+
+    100% {
+        background-position: 0%, center;
+    }
+}
+
+.bg {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 200vw;
+    height: 100vh;
+    z-index: 0;
+    background-image: url("assets/bg.png");
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position: bottom, 0%;
+    animation: moveBg 80s infinite linear;
+}
+
+@keyframes moveBg {
+    0% {
+        left: 0
+    }
+
+    100% {
+        left: -100%
+    }
+}
+
+.titleSec {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 999;
+}
+
+.titleSec .title {
+    display: inline-block;
+    width: max-content;
+    padding: 1.5rem 2rem;
+    font-size: 2rem;
+    border: 0.7rem solid #000;
+    background-color: #fddc65;
+    font-family: "Press Start 2P", sans-serif;
+    box-shadow: 1rem 1rem 0 0 rgb(0 0 0 / 25%),
+        inset 0.5rem 0.5rem 0 0 rgb(0 0 0 / 25%);
+}
+
+.titleSec p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.titleSec .start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.1rem;
+    flex-direction: row;
+}
+
+.titleSec .start>div {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 0;
+    flex-direction: row;
+}
+
+.titleSec .start>div .character::before {
+    position: absolute;
+    width: max-content;
+    bottom: -2.5rem;
+    left: -10%;
+    transform: rotateY(180deg) translateY(-50%);
+    content: 'Karakter seç';
+    padding: 0.25rem 0.5em;
+    background-color: #fff;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 600;
+}
+
+.titleSec .start>div .character {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    background-repeat: no-repeat;
+    background-size: 100% 300%;
+    transform: rotateY(180deg);
+    background-image: url("assets/PACK 1.png");
+    animation-name: wing;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(1, end);
+    cursor: pointer;
+}
+
+@keyframes wing {
+
+    0%,
+    100% {
+        background-position: top, top
+    }
+
+    25%,
+    75% {
+        background-position: center, top
+    }
+
+    50% {
+        background-position: bottom, top
+    }
+}
+
+.titleSec .start span {
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 1.2rem;
+    transform: rotateZ(90deg);
+}
+
+.titleSec .start button {
+    display: inline-block;
+    width: max-content;
+    padding: 0.5rem 1.2rem;
+    font-size: 1.5rem;
+    border: 0.3rem solid #000;
+    background-color: #fddc65;
+    font-weight: 900;
+    font-family: "Rajdhani", sans-serif;
+    box-shadow: 0.5rem 0.5rem 0 0 rgb(0 0 0 / 25%),
+        -0.4rem -0.4rem 0 0 rgb(0 0 0 / 25%);   
+    cursor: pointer;
+}
+
+.titleSec .start button:hover {
+    box-shadow: inset 0.4rem 0.4rem 0 0 rgb(0 0 0 / 25%),
+    inset -0.4rem -0.4rem 0 0 rgb(0 0 0 / 25%);
+}
+
+.quesScr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+}
+
+.quesScr > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.quesScr > div:first-child {
+    width: 70%;
+}
+
+.quesScr > div:first-child > span {
+    border-radius: 10px;
+    border: 0.2rem solid #000;
+    box-shadow: 0.35rem 0.35rem 0 0 rgb(0 0 0 / 25%),
+    inset 0.35rem 0.35rem 0 0 rgb(0 0 0 / 25%);
+}
+
+.quesScr > div:first-child p {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.quesScr > div:first-child .hearts,
+.quesScr>div:first-child .timer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.5rem 1rem;
+    background-color: wheat;
+    border: 0.25rem solid #000;
+    box-shadow: 0.25rem 0.25rem 0 0 rgb(0 0 0 / 25%),
+    inset 0.25rem 0.25rem 0 0 rgb(0 0 0 / 25%);
+}
+
+.quesScr>div:first-child .hearts img,
+.quesScr>div:first-child .timer img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.quesScr>div:first-child .hearts strong {
+    position: absolute;
+    right: -5rem;
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 1.5rem;
+    color: #000;
+    text-shadow: 0rem 0.5rem 0 rgb(0 0 0 / 50%),
+        0rem 1rem 0 rgb(0 0 0 / 40%),
+        0 1.5rem 0 rgb(0 0 0 / 30%),
+        0 2rem 0 rgb(0 0 0 / 20%);
+}
+
+@keyframes showIt {
+    0% {
+        text-shadow: 0rem 0rem 0 rgb(0 0 0 / 50%),
+                0rem 0rem 0 rgb(0 0 0 / 40%),
+                0 0rem 0 rgb(0 0 0 / 30%),
+                0 0rem 0 rgb(0 0 0 / 20%);
+    }
+
+    100% {
+        text-shadow: 0rem 0.5rem 0 rgb(0 0 0 / 50%),
+                0rem 1rem 0 rgb(0 0 0 / 40%),
+                0 1.5rem 0 rgb(0 0 0 / 30%),
+                0 2rem 0 rgb(0 0 0 / 20%);
+    }
+}
+
+.quesScr > div:first-child div:not(:first-child) span {
+    font-family: 'Press Start 2P', sans-serif;
+} 
+
+.quesScr > div:nth-child(2) {
+    width: 20% !important;
+    padding-right: 5rem;
+    justify-content: space-evenly !important;
+}
+
+.quesScr > div:nth-child(2) > div:first-child {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    background-repeat: no-repeat;
+    background-size: 100% 300%;
+    transform: rotateY(180deg) translateY(7rem);
+    background-image: url("assets/PACK 1.png");
+    animation: wing 1.2s infinite steps(1, end);
+    transition: 1s transform;
+}
+
+@keyframes falldown {
+    0%, 80% {
+        filter: grayscale(0%) hue-rotate(180deg);
+        transform: rotateY(180deg) translateY(7rem);
+    }
+
+    20% {
+        filter: grayscale(100%) hue-rotate(180deg);
+        transform: rotateY(180deg) rotateZ(45deg) translateY(7rem) translateX(2rem);
+    }
+}
+
+.quesScr>div:nth-child(2)>div:last-child {
+    display: flex;
+    flex-direction: row;
+    gap: 0.9rem;
+}
+
+.quesScr>div:nth-child(2)>div:last-child button {
+    width: 4.5rem;
+    height: 4.5rem;
+    aspect-ratio: 1 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #fddc65;
+    border: 4px solid #000;
+    box-shadow: 0.25rem 0.25rem 0 0 rgb(0 0 0 / 25%),
+               -0.25rem -0.25rem 0 0 rgb(0 0 0 / 25%);
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+}
+
+.quesScr>div:nth-child(2)>div:last-child button:hover,
+.quesScr>div:nth-child(2)>div:last-child button:focus {
+    box-shadow: inset 0.25rem 0.25rem 0 0 rgb(0 0 0 / 25%),
+                inset -0.25rem -0.25rem 0 0 rgb(0 0 0 / 25%);
+}
+
+.quesScr>div:nth-child(2)>div:last-child button:focus {
+    background-color: wheat;
+}
+
+.quesScr>div:nth-child(2)>div:last-child button span {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 1.2rem;
+    pointer-events: none !important;
+}
+
+.quesScr > div:nth-child(2) > div:last-child button:nth-child(1) span,
+.quesScr > div:nth-child(2) > div:last-child button:nth-child(2) span {
+    transform: rotateZ(-90deg);
+}
+
+.quesScr>div:nth-child(2)>div:last-child button p {
+    padding: 0;
+    margin: 0;
+    pointer-events: none !important;
+}
+
+.quesScr > div:nth-child(3) {
+    width: 40vw;
+    padding-bottom: 3.5rem;
+    padding-right: 2rem;
+    justify-content: end;
+    align-items: end;
+}
+
+.quesScr > div:nth-child(3) img {
+    width: 40vw;
+}
+
+.quesScr > div:nth-child(3) > div > .oNames {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    
+}
+
+.quesScr>div:nth-child(3) > div >.oNames span {
+    display: block;
+    width: 25%;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.quesScr > div:nth-child(3) > div {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    gap: 1rem;
+    position: relative;
+}
+
+.quesScr>div:nth-child(3)>div>.oIndicator {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: "Press Start 2P", sans-serif;
+}
+
+.quesScr>div:nth-child(3)>div>.oIndicator span {
+    width: 100%;
+    text-align: center;
+}
+
+.quesScr > div:nth-child(3) > div >.oIndicator span:not(.active) {
+    opacity: 0.3;
+}
+
+.msgBox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: repeating-linear-gradient(to bottom, rgb(0 0 0 / 20%) 0% 10%, rgb(0 0 0 / 40%) 10% 20%);
+}
+
+.msgBox .message {
+    position: absolute;
+    background-color: #fddc65;
+    border: 1rem solid #000;
+    border-radius: 1rem;
+    box-shadow: inset 1rem 1rem 0 0 rgb(0 0 0 / 25%);
+    width: calc(100% - 24rem);
+    height: calc(100% - 16rem);
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.msgBox .message div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+.msgBox .message div:first-child {
+    width: 80%;
+}
+
+.msgBox .message div h1 {
+    padding: 0;
+    margin: 0;
+    left: 0;
+    font-size: 2rem;
+    font-family: "Press Start 2P", sans-serif;
+}
+
+.msgBox .message div p {
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    gap: 0.2rem;
+}
+
+.msgBox .message div p .chh {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    aspect-ratio: 1 !important;
+    background-repeat: no-repeat;
+    background-size: 100% 300%;
+    background-position: 50% 50%;
+    transform: rotateY(180deg) translateY(20px);
+    background-image: url("assets/PACK 1.png");
+}
+
+.msgBox .message div button {
+    display: flex;
+    padding: 0.5rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: wheat;
+    border: 0.3rem solid #000;
+    box-shadow: 0.3rem 0.3rem 0 0 rgb(0 0 0 / 25%),
+        -0.3rem -0.3rem 0 0 rgb(0 0 0 / 25%);
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.msgBox .message div button:hover {
+    box-shadow: inset 0.3rem 0.3rem 0 0 rgb(0 0 0 / 25%),
+            inset -0.3rem -0.3rem 0 0 rgb(0 0 0 / 25%);
+}
+
+.scores {
+    background-color: #fddc65;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 1000;
+    width: 15rem;
+    box-shadow: 0.6rem 0.6rem 0 0 rgb(0 0 0 / 40%),
+        inset 0.6rem 0.6rem 0 0 rgb(0 0 0 / 25%);
+    border: 0.4rem solid #000;
+}
+
+.scores label {
+    padding-top: 1rem;
+    padding-bottom: 0.3rem;
+    font-family: "Press Start 2P", sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+}
+
+.scores:has(input:checked) label {
+    color: #f00;
+}
+
+.scores:has(input:not(:checked)) > div,
+.scores:has(input:not(:checked)) > span {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scores input {
+    display: none;
+}
+
+.scores > div {
+    max-height: 10000vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.01rem 2rem;
+    transition: 0.2s all;
+}
+
+.scores > div .chr {
+    width: 3rem;
+    height: 3rem;
+    aspect-ratio: 1 !important;
+    background-repeat: no-repeat;
+    background-size: 100% 300%;
+    background-position: 50% 50%;
+    background-image: url("assets/PACK 1.png");
+    transform: rotateY(180deg);
+}
+
+.scores > div span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.scores > span {
+    font-size: 0.9rem;
+    padding: 0.2rem;
+    padding-left: 1rem;
+    display: block;
+}
